@@ -10,9 +10,9 @@ export class ShoppingComponent implements OnInit {
 
   info = 'Your Shopping List';
   items: ShoppingItem[] = [
-    { description: 'Shampoo' },
-    { description: 'Beer' },
-    { description: 'More beer' }
+    { description: 'Shampoo', purchased: false },
+    { description: 'Beer', purchased: true },
+    { description: 'More beer', purchased: false }
   ];
   constructor() { }
 
@@ -22,10 +22,15 @@ export class ShoppingComponent implements OnInit {
   addItem(itemEl: HTMLInputElement): void {
     console.log(itemEl);
     const itemToAdd: ShoppingItem = {
-      description: itemEl.value
+      description: itemEl.value,
+      purchased: false
     };
     this.items = [itemToAdd, ...this.items];
     itemEl.value = '';
     itemEl.focus();
+  }
+
+  markPurchased(item: ShoppingItem): void {
+    item.purchased = true;
   }
 }
