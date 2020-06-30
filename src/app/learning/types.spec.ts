@@ -1,3 +1,7 @@
+// import * as fromHr from './hr/employee';
+import { Employee, Retiree, favoriteFood } from './hr';
+
+
 describe('writing jasmine specs', () => {
   it('is easy', () => {
     const a = 10;
@@ -185,6 +189,19 @@ describe('interfaces and duck typing', () => {
   });
 
 });
+describe('using modules', () => {
 
+  it('creating an instance of a class', () => {
+
+    const emp = new Employee();
+    emp.firstName = 'Robert';
+    emp.lastName = 'Smith';
+    emp.department = 'Singer';
+
+    const info = emp.getInfo();
+    expect(info).toBe('employee Robert Smith is a Singer');
+
+  });
+});
 
 
