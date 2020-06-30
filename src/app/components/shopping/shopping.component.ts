@@ -19,4 +19,13 @@ export class ShoppingComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  addItem(itemEl: HTMLInputElement): void {
+    console.log(itemEl);
+    const itemToAdd: ShoppingItem = {
+      description: itemEl.value
+    };
+    this.items = [itemToAdd, ...this.items];
+    itemEl.value = '';
+    itemEl.focus();
+  }
 }

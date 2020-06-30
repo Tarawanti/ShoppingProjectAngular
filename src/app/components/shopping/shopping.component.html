@@ -2,8 +2,10 @@
 <div class="form-group">
   <label for="item">Item</label>
   <input class="form-control"
+         #thingy
          name="item">
-  <button class="btn btn-primary">Add Item</button>
+  <button class="btn btn-primary"
+          (click)="addItem(thingy)">Add Item</button>
 </div>
 <section>
   <ul class="list-unstyled">
